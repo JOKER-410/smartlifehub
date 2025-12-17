@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartLife Hub Services - Education, Healthcare, Environment, Technology and more">
+    <title>Our Services - SmartLife Hub</title>
+    
+    <!-- External CSS - Modular Structure -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(6, 182, 212, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .services-hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+        }
+        
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .service-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .service-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .service-detail-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail,
+            .service-detail:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            
+            .service-detail-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🌟</div>
+                <span>SmartLife Hub</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Comprehensive resources across 10+ life domains to help you make smarter choices.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Explore our comprehensive range of services designed to empower your life</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Education -->
+                <article class="service-card">
+                    <div class="service-icon">📚</div>
+                    <h3 class="service-title">Education</h3>
+                    <p class="service-text">
+                        Free learning articles, coding basics, tutorials, and educational 
+                        resources for all ages.
+                    </p>
+                </article>
+                
+                <!-- Environment -->
+                <article class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3 class="service-title">Environment</h3>
+                    <p class="service-text">
+                        Green tips, pollution awareness, sustainability guides, and eco-friendly 
+                        living advice.
+                    </p>
+                </article>
+                
+                <!-- Healthcare -->
+                <article class="service-card">
+                    <div class="service-icon">💊</div>
+                    <h3 class="service-title">Healthcare</h3>
+                    <p class="service-text">
+                        Health awareness, daily wellness tips, mental health resources, and 
+                        medical information.
+                    </p>
+                </article>
+                
+                <!-- Social Issues -->
+                <article class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3 class="service-title">Social Issues</h3>
+                    <p class="service-text">
+                        Community solutions, social awareness campaigns, and resources for 
+                        positive change.
+                    </p>
+                </article>
+                
+                <!-- Public Awareness -->
+                <article class="service-card">
+                    <div class="service-icon">📰</div>
+                    <h3 class="service-title">Public Awareness</h3>
+                    <p class="service-text">
+                        Latest news, trending topics, important updates, and awareness 
+                        campaigns across all domains.
+                    </p>
+                </article>
+                
+                <!-- Real Estate -->
+                <article class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Real Estate</h3>
+                    <p class="service-text">
+                        Property tips, market insights, buying/renting guides, and real 
+                        estate listings.
+                    </p>
+                </article>
+                
+                <!-- Transportation -->
+                <article class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3 class="service-title">Transportation</h3>
+                    <p class="service-text">
+                        Smart transport solutions, commuting tips, EV guides, and mobility 
+                        innovations.
+                    </p>
+                </article>
+                
+                <!-- Engineering -->
+                <article class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">Engineering</h3>
+                    <p class="service-text">
+                        Engineering articles, technical guides, innovation insights, and 
+                        industry trends.
+                    </p>
+                </article>
+                
+                <!-- Robotics -->
+                <article class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Robotics</h3>
+                    <p class="service-text">
+                        Robotics introduction, AI basics, automation trends, and future 
+                        tech exploration.
+                    </p>
+                </article>
+                
+                <!-- Coding -->
+                <article class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Coding & Tech</h3>
+                    <p class="service-text">
+                        Programming tutorials, web development guides, and interactive 
+                        chatbot features.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Service Details</h2>
+                <p>Deep dive into our key service areas</p>
+            </div>
+            
+            <!-- Education Detail -->
+            <div class="service-detail">
+                <div class="service-detail-content">
+                    <h3>📚 Education & Learning</h3>
+                    <p>
+                        Our education section provides comprehensive learning resources designed 
+                        for students, professionals, and lifelong learners. From coding basics 
+                        to advanced concepts, we make learning accessible and engaging.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Free programming tutorials and coding basics</li>
+                        <li>Interactive learning articles</li>
+                        <li>Study guides and educational resources</li>
+                        <li>Career development tips</li>
+                        <li>Skill-building exercises</li>
+                    </ul>
+                    <a href="news.html" class="btn btn-primary" style="margin-top: 1rem;">Explore Articles</a>
+                </div>
+                <div class="service-detail-image">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" 
+                             alt="Students Learning">
+                        <figcaption>Empowering education for everyone</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <!-- Healthcare Detail -->
+            <div class="service-detail">
+                <div class="service-detail-content">
+                    <h3>💊 Healthcare & Wellness</h3>
+                    <p>
+                        Your health is our priority. We provide reliable health information, 
+                        wellness tips, and resources to help you maintain a balanced and 
+                        healthy lifestyle. Always consult professionals for medical advice.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Daily health and wellness tips</li>
+                        <li>Mental health awareness resources</li>
+                        <li>Nutrition and fitness guides</li>
+                        <li>Preventive healthcare information</li>
+                        <li>Stress management techniques</li>
+                    </ul>
+                    <a href="news.html" class="btn btn-primary" style="margin-top: 1rem;">Health Resources</a>
+                </div>
+                <div class="service-detail-image">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" 
+                             alt="Healthcare">
+                        <figcaption>Promoting health and wellness</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <!-- Environment Detail -->
+            <div class="service-detail">
+                <div class="service-detail-content">
+                    <h3>🌱 Environment & Sustainability</h3>
+                    <p>
+                        Join us in protecting our planet. Our environment section offers 
+                        practical tips for sustainable living, pollution awareness, and 
+                        climate action resources for individuals and communities.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Eco-friendly living tips</li>
+                        <li>Pollution awareness information</li>
+                        <li>Climate change education</li>
+                        <li>Recycling and waste reduction guides</li>
+                        <li>Green technology insights</li>
+                    </ul>
+                    <a href="news.html" class="btn btn-primary" style="margin-top: 1rem;">Go Green</a>
+                </div>
+                <div class="service-detail-image">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop" 
+                             alt="Environment">
+                        <figcaption>Building a sustainable future</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <!-- Technology Detail -->
+            <div class="service-detail">
+                <div class="service-detail-content">
+                    <h3>💻 Technology & Innovation</h3>
+                    <p>
+                        Stay ahead with our technology section covering coding, robotics, 
+                        AI, and the latest innovations. Perfect for tech enthusiasts and 
+                        professionals looking to expand their knowledge.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Programming tutorials for all levels</li>
+                        <li>Robotics and AI introductions</li>
+                        <li>Web development guides</li>
+                        <li>Tech industry insights</li>
+                        <li>Interactive SmartBot chatbot</li>
+                    </ul>
+                    <a href="news.html" class="btn btn-primary" style="margin-top: 1rem;">Explore Tech</a>
+                </div>
+                <div class="service-detail-image">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" 
+                             alt="Technology">
+                        <figcaption>Embracing the future of technology</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Features Section (Task 3) -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive Features</h2>
+                <p>Powered by JavaScript for enhanced user experience</p>
+            </div>
+            
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-icon">🌙</div>
+                    <h3 class="card-title">Dark Mode</h3>
+                    <p class="card-text">
+                        Toggle between light and dark themes for comfortable viewing. 
+                        Your preference is saved automatically!
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+<span class="keyword">function</span> toggleMode() {
+  document.body
+    .classList.toggle(<span class="string">"dark"</span>);
+}
+                        </code>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3 class="card-title">Smart Chatbot</h3>
+                    <p class="card-text">
+                        Our AI-powered SmartBot answers your questions about education, 
+                        health, technology, and more!
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+<span class="keyword">if</span> (message.includes(<span class="string">"health"</span>)) {
+  respond(healthTips);
+}
+                        </code>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">📰</div>
+                    <h3 class="card-title">News Filter</h3>
+                    <p class="card-text">
+                        Filter articles by category to find exactly what you're looking 
+                        for. Dynamic and instant results!
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+cards.<span class="keyword">filter</span>(card => 
+  card.category === filter
+);
+                        </code>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3 class="card-title">Like System</h3>
+                    <p class="card-text">
+                        Like your favorite articles! Your preferences are saved locally 
+                        so you never lose them.
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+localStorage.setItem(
+  <span class="string">`liked_${id}`</span>, <span class="string">'true'</span>
+);
+                        </code>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">👥</div>
+                    <h3 class="card-title">Visitor Counter</h3>
+                    <p class="card-text">
+                        Track total visitors using localStorage. Persistent data that 
+                        survives browser sessions!
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+<span class="keyword">let</span> count = localStorage
+  .getItem(<span class="string">'visitors'</span>);
+count++;
+                        </code>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-icon">✅</div>
+                    <h3 class="card-title">Form Validation</h3>
+                    <p class="card-text">
+                        Real-time form validation ensures data quality before submission. 
+                        Instant feedback for users!
+                    </p>
+                    <div class="code-block" style="margin-top: 1rem;">
+                        <code>
+<span class="keyword">if</span> (!email.match(regex)) {
+  showError(<span class="string">"Invalid"</span>);
+}
+                        </code>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/Plans Section -->
+    <section class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Plans</h2>
+                <p>SmartLife Hub is completely free, but here's what you get!</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card text-center">
+                    <div class="category-tag">Basic</div>
+                    <h3 style="font-size: 2.5rem; margin: 1rem 0;">Free</h3>
+                    <p class="card-text">Forever free for all users</p>
+                    <ul style="list-style: none; margin: 2rem 0; text-align: left;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Access to all articles</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ SmartBot chatbot</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Dark mode</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ News filter</li>
+                        <li style="padding: 0.5rem 0;">✓ Community support</li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+                
+                <div class="card text-center" style="border: 2px solid var(--primary); transform: scale(1.05);">
+                    <div class="category-tag" style="background: var(--primary); color: white;">Popular</div>
+                    <h3 style="font-size: 2.5rem; margin: 1rem 0;">Free</h3>
+                    <p class="card-text">All features included!</p>
+                    <ul style="list-style: none; margin: 2rem 0; text-align: left;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Everything in Basic</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Save favorites</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Newsletter access</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ All 10+ domains</li>
+                        <li style="padding: 0.5rem 0;">✓ Priority updates</li>
+                    </ul>
+                    <a href="index.html" class="btn btn-primary" style="width: 100%;">Start Now</a>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="category-tag">Enterprise</div>
+                    <h3 style="font-size: 2.5rem; margin: 1rem 0;">Contact</h3>
+                    <p class="card-text">For organizations & schools</p>
+                    <ul style="list-style: none; margin: 2rem 0; text-align: left;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Everything included</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Custom solutions</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ API access</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1);">✓ Dedicated support</li>
+                        <li style="padding: 0.5rem 0;">✓ White-label options</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is SmartLife Hub really free?</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Yes! SmartLife Hub is completely free for all users. We believe 
+                                that quality education and information should be accessible to everyone.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How often is content updated?</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                We update our content regularly with new articles, news, and resources. 
+                                Subscribe to our newsletter to stay informed about the latest updates.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I contribute content?</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                We welcome contributions from experts in various fields. Please 
+                                contact us through our contact form to discuss collaboration opportunities.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does the chatbot work?</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Our SmartBot uses JavaScript keyword matching to understand your 
+                                questions and provide relevant responses about education, health, 
+                                environment, technology, and more.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my data safe?</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Absolutely. We store minimal data locally in your browser (like 
+                                theme preferences and liked articles). We don't collect personal 
+                                information without your consent.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">🌟</div>
+                        <span>SmartLife Hub</span>
+                    </a>
+                    <p>
+                        Your comprehensive platform for education, health, environment, 
+                        and technology. Making smart living accessible to everyone.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Robotics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
+                        Subscribe to get the latest updates.
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SmartLife Hub. All rights reserved. NCTU (New Cairo Technological University)</p>
+                <div class="footer-social">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle" title="Chat with SmartBot">💬</button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div>
+                    <h4>🤖 SmartBot</h4>
+                    <div class="chatbot-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">✕</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages"></div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button id="chatbotSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" title="Scroll to Top">⬆️</button>
+
+    <!-- External JavaScript - Modular Structure -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartLife Hub News - Latest articles on Education, Health, Environment, Technology and more">
+    <title>News & Articles - SmartLife Hub</title>
+    
+    <!-- External CSS - Modular Structure -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        .news-hero {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(244, 114, 182, 0.9) 100%),
+                        url('images/top.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .news-hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .featured-article-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .featured-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-article:hover .featured-article-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-article-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+        
+        @media (max-width: 768px) {
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-article-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🌟</div>
+                <span>SmartLife Hub</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="news.html" class="nav-link active">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Hero -->
+    <section class="news-hero">
+        <div class="container">
+            <h1>News & Articles</h1>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Stay informed with the latest updates across education, health, environment, and technology.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="section">
+        <div class="container">
+            <div class="featured-article">
+                <div class="featured-article-image">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=500&fit=crop" 
+                         alt="The Future of AI and Robotics">
+                </div>
+                <div class="featured-article-content">
+                    <span class="featured-badge">🔥 Featured Article</span>
+                    <h2>The Future of AI and Robotics in 2025</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Explore how artificial intelligence and robotics are transforming industries, 
+                        healthcare, education, and everyday life. From autonomous vehicles to smart 
+                        assistants, the future is now.
+                    </p>
+                    <div class="news-card-meta" style="margin-bottom: 1.5rem;">
+                        <span>📅 Dec 17, 2025</span>
+                        <span>👁️ 2.5k views</span>
+                        <span>⏱️ 8 min read</span>
+                    </div>
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                        <button class="like-btn" data-id="featured1" style="font-size: 1.25rem;">
+                            <span class="heart-icon">❤️</span>
+                            <span class="like-count">128</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Filter & Grid -->
+    <section class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%); padding-top: 2rem;">
+        <div class="container">
+            <!-- Smart News Filter -->
+            <div class="news-filter">
+                <button class="filter-btn active" data-filter="all">🌐 All</button>
+                <button class="filter-btn" data-filter="education">📚 Education</button>
+                <button class="filter-btn" data-filter="environment">🌱 Environment</button>
+                <button class="filter-btn" data-filter="healthcare">💊 Healthcare</button>
+                <button class="filter-btn" data-filter="technology">💻 Technology</button>
+                <button class="filter-btn" data-filter="social">🤝 Social</button>
+                <button class="filter-btn" data-filter="realestate">🏠 Real Estate</button>
+            </div>
+            
+            <!-- News Grid -->
+            <div class="news-grid">
+                <!-- Education Article 1 -->
+                <article class="news-card" data-category="education">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge">Education</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 16, 2025</span>
+                            <span>👁️ 1.2k views</span>
+                        </div>
+                        <h3 class="news-card-title">The Future of Online Learning Platforms</h3>
+                        <p class="news-card-excerpt">
+                            Discover how digital education is reshaping the way we learn and acquire new skills...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="edu1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">45</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Environment Article 1 -->
+                <article class="news-card" data-category="environment">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--success);">Environment</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 15, 2025</span>
+                            <span>👁️ 980 views</span>
+                        </div>
+                        <h3 class="news-card-title">10 Ways to Reduce Your Carbon Footprint</h3>
+                        <p class="news-card-excerpt">
+                            Simple daily habits that can make a big difference for our planet's future...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="env1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">67</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Healthcare Article 1 -->
+                <article class="news-card" data-category="healthcare">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--accent);">Healthcare</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 14, 2025</span>
+                            <span>👁️ 1.5k views</span>
+                        </div>
+                        <h3 class="news-card-title">Mental Health Tips for Better Living</h3>
+                        <p class="news-card-excerpt">
+                            Essential practices for maintaining mental wellness in today's fast-paced world...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="health1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">89</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Technology Article 1 -->
+                <article class="news-card" data-category="technology">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--secondary);">Technology</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 13, 2025</span>
+                            <span>👁️ 2.1k views</span>
+                        </div>
+                        <h3 class="news-card-title">Getting Started with Web Development</h3>
+                        <p class="news-card-excerpt">
+                            A beginner's guide to HTML, CSS, and JavaScript for aspiring developers...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="tech1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">156</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Social Article 1 -->
+                <article class="news-card" data-category="social">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--warning);">Social Issues</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 12, 2025</span>
+                            <span>👁️ 890 views</span>
+                        </div>
+                        <h3 class="news-card-title">Building Stronger Communities Together</h3>
+                        <p class="news-card-excerpt">
+                            How local initiatives are making a difference in addressing social challenges...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="social1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">34</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Real Estate Article 1 -->
+                <article class="news-card" data-category="realestate">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: #8b5cf6;">Real Estate</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 11, 2025</span>
+                            <span>👁️ 756 views</span>
+                        </div>
+                        <h3 class="news-card-title">First-Time Home Buyer's Complete Guide</h3>
+                        <p class="news-card-excerpt">
+                            Everything you need to know before purchasing your first property...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="real1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">52</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Education Article 2 -->
+                <article class="news-card" data-category="education">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge">Education</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 10, 2025</span>
+                            <span>👁️ 1.1k views</span>
+                        </div>
+                        <h3 class="news-card-title">Study Techniques for Better Retention</h3>
+                        <p class="news-card-excerpt">
+                            Science-backed methods to improve your learning and memory retention...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="edu2">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">78</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Environment Article 2 -->
+                <article class="news-card" data-category="environment">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--success);">Environment</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 9, 2025</span>
+                            <span>👁️ 845 views</span>
+                        </div>
+                        <h3 class="news-card-title">Renewable Energy: A Sustainable Future</h3>
+                        <p class="news-card-excerpt">
+                            How solar, wind, and other renewable sources are changing our energy landscape...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="env2">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">91</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Technology Article 2 - Robotics -->
+                <article class="news-card" data-category="technology">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--secondary);">Robotics</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 8, 2025</span>
+                            <span>👁️ 1.8k views</span>
+                        </div>
+                        <h3 class="news-card-title">Introduction to Robotics for Beginners</h3>
+                        <p class="news-card-excerpt">
+                            Your first steps into the exciting world of robotics and automation...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="tech2">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">124</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Healthcare Article 2 -->
+                <article class="news-card" data-category="healthcare">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: var(--accent);">Healthcare</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 7, 2025</span>
+                            <span>👁️ 1.3k views</span>
+                        </div>
+                        <h3 class="news-card-title">Nutrition Guide for a Healthy Lifestyle</h3>
+                        <p class="news-card-excerpt">
+                            Essential dietary tips and meal planning strategies for optimal health...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="health2">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">102</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Transportation Article -->
+                <article class="news-card" data-category="technology">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: #6366f1;">Transportation</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 6, 2025</span>
+                            <span>👁️ 920 views</span>
+                        </div>
+                        <h3 class="news-card-title">Electric Vehicles: The Road Ahead</h3>
+                        <p class="news-card-excerpt">
+                            Everything you need to know about the EV revolution and smart transportation...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="trans1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">67</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Engineering Article -->
+                <article class="news-card" data-category="technology">
+                    <div class="news-card-image" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop');">
+                        <span class="news-card-badge" style="background: #ec4899;">Engineering</span>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-card-meta">
+                            <span>📅 Dec 5, 2025</span>
+                            <span>👁️ 780 views</span>
+                        </div>
+                        <h3 class="news-card-title">Modern Engineering Innovations</h3>
+                        <p class="news-card-excerpt">
+                            Exploring groundbreaking engineering solutions shaping our world...
+                        </p>
+                        <div class="news-card-footer">
+                            <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read More</a>
+                            <button class="like-btn" data-id="eng1">
+                                <span class="heart-icon">❤️</span>
+                                <span class="like-count">45</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Load More -->
+            <div class="text-center" style="margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="showNotification('📰 More articles coming soon!')">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section" style="background: var(--gradient-1); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 1rem;">Never Miss an Update</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Subscribe to our newsletter and get the latest articles, news, and updates 
+                delivered directly to your inbox.
+            </p>
+            <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email address" 
+                       style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border-radius: 50px; border: none; font-size: 1rem;">
+                <button type="submit" class="btn" style="background: white; color: var(--primary);">
+                    Subscribe Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">🌟</div>
+                        <span>SmartLife Hub</span>
+                    </a>
+                    <p>
+                        Your comprehensive platform for education, health, environment, 
+                        and technology. Making smart living accessible to everyone.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Robotics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
+                        Subscribe to get the latest updates.
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SmartLife Hub. All rights reserved. NCTU (New Cairo Technological University)</p>
+                <div class="footer-social">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle" title="Chat with SmartBot">💬</button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div>
+                    <h4>🤖 SmartBot</h4>
+                    <div class="chatbot-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">✕</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages"></div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button id="chatbotSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" title="Scroll to Top">⬆️</button>
+
+    <!-- External JavaScript - Modular Structure -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

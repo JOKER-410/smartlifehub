@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about SmartLife Hub - Our mission, team, and values">
+    <title>About Us - SmartLife Hub</title>
+    
+    <!-- External CSS - Modular Structure -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(167, 139, 250, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .about-hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            max-width: 450px;
+            position: relative;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid var(--background);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -8px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🌟</div>
+                <span>SmartLife Hub</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About SmartLife Hub</h1>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Empowering minds, enriching lives, and building a smarter future for everyone.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" 
+                             alt="Our Team Working Together">
+                        <figcaption>Our dedicated team working to make a difference</figcaption>
+                    </figure>
+                </div>
+                <div class="about-content">
+                    <h2>Our Mission</h2>
+                    <p>
+                        At SmartLife Hub, we believe that knowledge is the key to a better life. 
+                        Our mission is to create a comprehensive platform that educates, raises 
+                        awareness, and empowers individuals to make smarter choices in all 
+                        aspects of their lives.
+                    </p>
+                    <p>
+                        We cover 10+ essential domains including Education, Healthcare, Environment, 
+                        Technology, and more, ensuring that our users have access to reliable, 
+                        up-to-date information that can positively impact their daily lives.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🎯</div>
+                            <div>
+                                <strong>Our Vision</strong>
+                                <p>A world where everyone has access to quality information</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">💡</div>
+                            <div>
+                                <strong>Our Values</strong>
+                                <p>Integrity, Innovation, Accessibility, and Impact</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🌍</div>
+                            <div>
+                                <strong>Our Reach</strong>
+                                <p>Serving users across 50+ countries worldwide</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🤝</div>
+                            <div>
+                                <strong>Our Commitment</strong>
+                                <p>Free, reliable, and accessible content for all</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is JavaScript Section (Task 2) -->
+    <section class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Understanding JavaScript</h2>
+                <p>The programming language that powers our interactive features</p>
+            </div>
+            
+            <div class="grid-2" style="margin-bottom: 3rem;">
+                <article class="card">
+                    <header>
+                        <h3>💻 What is JavaScript?</h3>
+                    </header>
+                    <p>
+                        <strong>JavaScript</strong> is a high-level, dynamic, client-side scripting 
+                        language that enables interactive web pages. It is an essential part of web 
+                        applications and is supported by all modern web browsers.
+                    </p>
+                    <p>
+                        JavaScript allows developers to:
+                    </p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li>Create dynamic and interactive user interfaces</li>
+                        <li>Validate form inputs in real-time</li>
+                        <li>Update page content without reloading</li>
+                        <li>Handle user events (clicks, scrolls, etc.)</li>
+                        <li>Store data locally in the browser</li>
+                        <li>Communicate with servers (AJAX)</li>
+                    </ul>
+                </article>
+                
+                <article class="card">
+                    <header>
+                        <h3>🎯 Why We Use JavaScript?</h3>
+                    </header>
+                    <p>
+                        On SmartLife Hub, JavaScript powers all our interactive features:
+                    </p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>🌙 Dark Mode:</strong> Toggle between light and dark themes</li>
+                        <li><strong>🤖 Smart Chatbot:</strong> Interactive AI assistant</li>
+                        <li><strong>📰 News Filter:</strong> Filter articles by category</li>
+                        <li><strong>❤️ Like System:</strong> Like and save favorite articles</li>
+                        <li><strong>👥 Visitor Counter:</strong> Track site visits with localStorage</li>
+                        <li><strong>✅ Form Validation:</strong> Real-time input validation</li>
+                        <li><strong>✨ Animations:</strong> Smooth scroll and transitions</li>
+                    </ul>
+                </article>
+            </div>
+            
+            <!-- HTML vs JavaScript Comparison Table -->
+            <div class="section-title">
+                <h3>HTML vs JavaScript Comparison</h3>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>HTML</th>
+                        <th>JavaScript</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Type</strong></td>
+                        <td>Markup Language</td>
+                        <td>Scripting/Programming Language</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purpose</strong></td>
+                        <td>Structure & Content</td>
+                        <td>Behavior & Interactivity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Logic Support</strong></td>
+                        <td><span class="cross">❌ No</span></td>
+                        <td><span class="check">✔️ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conditions (if/else)</strong></td>
+                        <td><span class="cross">❌ No</span></td>
+                        <td><span class="check">✔️ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Loops</strong></td>
+                        <td><span class="cross">❌ No</span></td>
+                        <td><span class="check">✔️ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>User Interaction</strong></td>
+                        <td><span class="cross">❌ Limited</span></td>
+                        <td><span class="check">✔️ Full Support</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DOM Manipulation</strong></td>
+                        <td><span class="cross">❌ No</span></td>
+                        <td><span class="check">✔️ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td><code>&lt;h1&gt;Hello&lt;/h1&gt;</code></td>
+                        <td><code>if(condition) { }</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Code Examples -->
+            <div class="grid-2" style="margin-top: 3rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem;">📝 HTML Example</h4>
+                    <div class="code-block">
+                        <code>
+<span class="comment">&lt;!-- HTML creates structure --&gt;</span>
+&lt;<span class="keyword">header</span>&gt;
+  &lt;<span class="keyword">nav</span>&gt;
+    &lt;<span class="keyword">a</span> href=<span class="string">"index.html"</span>&gt;Home&lt;/<span class="keyword">a</span>&gt;
+  &lt;/<span class="keyword">nav</span>&gt;
+&lt;/<span class="keyword">header</span>&gt;
+
+&lt;<span class="keyword">section</span>&gt;
+  &lt;<span class="keyword">h1</span>&gt;Welcome&lt;/<span class="keyword">h1</span>&gt;
+  &lt;<span class="keyword">p</span>&gt;This is content&lt;/<span class="keyword">p</span>&gt;
+&lt;/<span class="keyword">section</span>&gt;
+
+&lt;<span class="keyword">footer</span>&gt;
+  &lt;<span class="keyword">p</span>&gt;&copy; 2025&lt;/<span class="keyword">p</span>&gt;
+&lt;/<span class="keyword">footer</span>&gt;
+                        </code>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="margin-bottom: 1rem;">⚡ JavaScript Example</h4>
+                    <div class="code-block">
+                        <code>
+<span class="comment">// JavaScript adds interactivity</span>
+<span class="keyword">function</span> toggleDarkMode() {
+  document.body.classList.toggle(<span class="string">"dark"</span>);
+}
+
+<span class="comment">// Conditions</span>
+<span class="keyword">if</span> (age >= 18) {
+  alert(<span class="string">"Access granted"</span>);
+} <span class="keyword">else</span> {
+  alert(<span class="string">"Access denied"</span>);
+}
+
+<span class="comment">// Data storage</span>
+localStorage.setItem(<span class="string">"theme"</span>, <span class="string">"dark"</span>);
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Journey Timeline -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Journey</h2>
+                <p>From idea to impact - our story of growth</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <h4>🌱 2023 - The Beginning</h4>
+                        <p>SmartLife Hub was founded with a vision to make quality information accessible to everyone.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <h4>📚 2024 - Expansion</h4>
+                        <p>Expanded to cover 10+ domains including Healthcare, Environment, and Technology.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <h4>🚀 2025 - Innovation</h4>
+                        <p>Launched interactive features including SmartBot chatbot and personalized learning paths.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <h4>🌍 Future - Global Impact</h4>
+                        <p>Aiming to reach 1 million users and expand to more languages and regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>The passionate people behind SmartLife Hub</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar" style="background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👨‍💻</div>
+                    <h3 class="team-name">Mostafa Abudakka</h3>
+                    <p class="team-role">Team Leader</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: var(--gradient-2); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Marwa Zain El-Dein</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #f472b6 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Maryam Abdelhady</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Maryam Hany</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Maryam Amr</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Maryam Thabet</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👩‍💻</div>
+                    <h3 class="team-name">Maryam Abdelsalam</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #14b8a6 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👨‍💻</div>
+                    <h3 class="team-name">Youssef Mostafa</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👨‍💻</div>
+                    <h3 class="team-name">Youssef Karim</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #f43f5e 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white;">👨‍💻</div>
+                    <h3 class="team-name">Mohamed Khaled</h3>
+                    <p class="team-role">Developer</p>
+                    <div class="team-social">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="grid-4">
+                <div class="card text-center">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">🎯</div>
+                    <h3 class="card-title">Excellence</h3>
+                    <p class="card-text">We strive for the highest quality in all our content and features.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">🤝</div>
+                    <h3 class="card-title">Integrity</h3>
+                    <p class="card-text">We maintain honesty and accuracy in all information we provide.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">🌍</div>
+                    <h3 class="card-title">Accessibility</h3>
+                    <p class="card-text">We ensure our platform is accessible and free for everyone.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-icon" style="margin: 0 auto 1.5rem;">💡</div>
+                    <h3 class="card-title">Innovation</h3>
+                    <p class="card-text">We continuously improve and adopt new technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">🌟</div>
+                        <span>SmartLife Hub</span>
+                    </a>
+                    <p>
+                        Your comprehensive platform for education, health, environment, 
+                        and technology. Making smart living accessible to everyone.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Robotics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
+                        Subscribe to get the latest updates.
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SmartLife Hub. All rights reserved. NCTU (New Cairo Technological University)</p>
+                <div class="footer-social">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" id="chatbotToggle" title="Chat with SmartBot">💬</button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div>
+                    <h4>🤖 SmartBot</h4>
+                    <div class="chatbot-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">✕</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages"></div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button id="chatbotSend">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" title="Scroll to Top">⬆️</button>
+
+    <!-- External JavaScript - Modular Structure -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
