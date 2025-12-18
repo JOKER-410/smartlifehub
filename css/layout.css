@@ -59,10 +59,6 @@
     box-shadow: var(--shadow-lg);
 }
 
-body.dark-mode .navbar {
-    background: rgba(26, 26, 46, 0.95);
-}
-
 .nav-container {
     display: flex;
     justify-content: space-between;

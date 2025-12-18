@@ -32,7 +32,6 @@
         transition: var(--transition);
     }
     
-    body.dark-mode .nav-menu { background: var(--card-bg); }
     .nav-menu.active { transform: translateY(0); }
     .mobile-menu-btn { display: flex; }
 }

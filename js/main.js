@@ -5,7 +5,6 @@
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all modules
-    if (window.Theme) Theme.init();
     if (window.Navigation) Navigation.init();
     if (window.Chatbot) Chatbot.init();
     if (window.News) News.init();

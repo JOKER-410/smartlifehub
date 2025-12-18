@@ -48,14 +48,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    --background: #0f0f23;
-    --card-bg: #1a1a2e;
-    --text-primary: #e5e7eb;
-    --text-secondary: #9ca3af;
-}
-
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;

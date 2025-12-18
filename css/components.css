@@ -43,24 +43,6 @@
     transform: translateY(-3px);
 }
 
-.theme-toggle {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: var(--gradient-1);
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    transition: var(--transition);
-    box-shadow: var(--shadow-md);
-}
-
-.theme-toggle:hover { transform: rotate(180deg) scale(1.1); }
-
 /* Cards */
 .card {
     background: var(--card-bg);
@@ -90,11 +72,6 @@
 }
 
 .card:hover::before { transform: scaleX(1); }
-
-body.dark-mode .card {
-    background: var(--card-bg);
-    border: 1px solid rgba(124, 58, 237, 0.2);
-}
 
 .card-icon {
     width: 70px;
